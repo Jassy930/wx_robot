@@ -14,15 +14,47 @@ class WechatController extends Controller
      */
     public function serve()
     {
-        Log::info('request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
-
+        //Log::info('request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
         $wechat = app('wechat');
+		//Log::info('openid:' . $_GET['openid']);
         $wechat->server->setMessageHandler(function($message){
-            return "欢迎关注 大雁！";
+			switch ($message -> MsgType){
+				case 'text':
+					if (strpos($message->Content, '么么哒') !== false){
+						$text = '么么哒~~~';
+						Log::info('openid:' . $_GET['openid'] . '|message:' . $message->Content . '|res:' . $text);
+						return $text;
+					}
+					return self::send_post($message->Content, $_GET['openid']);
+					break;
+				default:
+					return "然后呢？";
+			}
+            return "然后呢？";
         });
 
-        Log::info('return response.');
+        //Log::info('return response.');
 
         return $wechat->server->serve();
     }
+
+	public function send_post($text,$userid = 12345){
+		$url = "http://www.tuling123.com/openapi/api";	
+		$arr = array('key' => '786f9b0f3c924117848fbbef4b46af9f', 'info' => $text, 'userid' => $userid);
+		$postdata = http_build_query($arr);
+		$options = array(
+			'http' => array(
+				'method' => 'POST',
+				'header' => 'Content-type:application/x-www-form-urlencoded',
+				'content' => $postdata,
+				'timeout' => 15 * 60
+			)
+		);
+		$content = stream_context_create($options);
+		$result = file_get_contents($url, false, $content);
+	//	Log::info(json_decode($result)->text);
+		$result = json_decode($result)->text;
+		Log::info('openid:' . $userid . '|message:' . $text . '|res:' . $result);
+		return $result;
+	}
 }
