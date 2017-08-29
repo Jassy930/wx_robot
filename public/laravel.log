@@ -1,0 +1,803 @@
+
+[2017-01-25 11:31:19] local.INFO: request arrived.  
+[2017-01-25 11:31:19] local.INFO: return response.  
+[2017-01-25 11:31:19] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:50
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(50): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 50, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:31:54] local.INFO: request arrived.  
+[2017-01-25 11:31:54] local.INFO: return response.  
+[2017-01-25 11:31:54] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:50
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(50): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 50, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:35:04] local.INFO: request arrived.  
+[2017-01-25 11:35:04] local.INFO: return response.  
+[2017-01-25 11:35:04] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:50
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(50): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 50, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:35:39] local.INFO: request arrived.  
+[2017-01-25 11:35:39] local.INFO: return response.  
+[2017-01-25 11:35:39] local.INFO:   
+[2017-01-25 11:35:39] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:51
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(51): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 51, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:36:13] local.INFO: request arrived.  
+[2017-01-25 11:36:13] local.INFO: return response.  
+[2017-01-25 11:36:13] local.INFO:   
+[2017-01-25 11:36:13] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:51
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(51): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 51, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:37:00] local.INFO: request arrived.  
+[2017-01-25 11:37:00] local.INFO: return response.  
+[2017-01-25 11:37:00] local.INFO: log1:  
+[2017-01-25 11:37:00] local.INFO:   
+[2017-01-25 11:37:00] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:52
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(52): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 52, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(24): App\Http\Controllers\WechatController->send_post('\xE4\xBB\xA5\xE5\x90\x8E\xE5\xA5\xA5')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(34): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:37:24] local.INFO: request arrived.  
+[2017-01-25 11:37:24] local.INFO: return response.  
+[2017-01-25 11:37:24] local.INFO: log1:你好  
+[2017-01-25 11:37:25] local.INFO:   
+[2017-01-25 11:37:25] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:52
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(52): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 52, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(24): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(34): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:37:58] local.INFO: request arrived.  
+[2017-01-25 11:37:58] local.INFO: return response.  
+[2017-01-25 11:37:58] local.INFO: log1:你好  
+[2017-01-25 11:37:58] local.INFO:   
+[2017-01-25 11:37:58] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:52
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(52): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 52, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:38:45] local.INFO: request arrived.  
+[2017-01-25 11:38:45] local.INFO: return response.  
+[2017-01-25 11:38:45] local.INFO: {"code":40007,"text":"您的请求内容为空。"}  
+[2017-01-25 11:38:45] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:51
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(51): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 51, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:39:31] local.INFO: request arrived.  
+[2017-01-25 11:39:31] local.INFO: return response.  
+[2017-01-25 11:39:31] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:50
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(50): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 50, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:40:13] local.INFO: request arrived.  
+[2017-01-25 11:40:13] local.INFO: return response.  
+[2017-01-25 11:40:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined function App\Http\Controllers\jsono_decode()' in /srv/www/wx/app/Http/Controllers/WechatController.php:50
+Stack trace:
+#0 {main}  
+[2017-01-25 11:40:34] local.INFO: request arrived.  
+[2017-01-25 11:40:34] local.INFO: return response.  
+[2017-01-25 11:40:34] local.ERROR: exception 'ErrorException' with message 'Object of class stdClass could not be converted to string' in /srv/www/wx/vendor/monolog/monolog/src/Monolog/Logger.php:323
+Stack trace:
+#0 /srv/www/wx/vendor/monolog/monolog/src/Monolog/Logger.php(323): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(4096, 'Object of class...', '/srv/www/wx/ven...', 323, Array)
+#1 /srv/www/wx/vendor/monolog/monolog/src/Monolog/Logger.php(546): Monolog\Logger->addRecord(200, Object(stdClass), Array)
+#2 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Log/Writer.php(202): Monolog\Logger->info(Object(stdClass), Array)
+#3 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Log/Writer.php(149): Illuminate\Log\Writer->writeLog('info', Object(stdClass), Array)
+#4 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\Log\Writer->info(Object(stdClass))
+#5 /srv/www/wx/app/Http/Controllers/WechatController.php(50): Illuminate\Support\Facades\Facade::__callStatic('info', Array)
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(50): Illuminate\Support\Facades\Log::info(Object(stdClass))
+#7 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#8 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#9 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#10 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#11 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#12 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#13 [internal function]: App\Http\Controllers\WechatController->serve()
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#45 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#47 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#48 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#49 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#50 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#51 {main}  
+[2017-01-25 11:41:36] local.INFO: request arrived.  
+[2017-01-25 11:41:36] local.INFO: return response.  
+[2017-01-25 11:41:36] local.INFO: 您的请求内容为空。  
+[2017-01-25 11:41:36] local.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /srv/www/wx/app/Http/Controllers/WechatController.php:51
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(51): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Trying to get p...', '/srv/www/wx/app...', 51, Array)
+#1 /srv/www/wx/app/Http/Controllers/WechatController.php(23): App\Http\Controllers\WechatController->send_post('\xE4\xBD\xA0\xE5\xA5\xBD')
+#2 [internal function]: App\Http\Controllers\WechatController->App\Http\Controllers\{closure}(Object(EasyWeChat\Support\Collection))
+#3 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(406): call_user_func_array(Object(Closure), Array)
+#4 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(371): EasyWeChat\Server\Guard->handleMessage(Array)
+#5 /srv/www/wx/vendor/overtrue/wechat/src/Server/Guard.php(157): EasyWeChat\Server\Guard->handleRequest()
+#6 /srv/www/wx/app/Http/Controllers/WechatController.php(33): EasyWeChat\Server\Guard->serve()
+#7 [internal function]: App\Http\Controllers\WechatController->serve()
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#41 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#42 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#43 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#44 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#45 {main}  
+[2017-01-25 11:42:03] local.INFO: request arrived.  
+[2017-01-25 11:42:03] local.INFO: return response.  
+[2017-01-25 11:42:32] local.INFO: request arrived.  
+[2017-01-25 11:42:32] local.INFO: return response.  
+[2017-01-25 11:46:02] local.INFO: request arrived.  
+[2017-01-25 11:46:02] local.INFO: return response.  
+[2017-01-25 12:06:09] local.INFO: request arrived.  
+[2017-01-25 12:06:09] local.INFO: return response.  
+[2017-01-25 12:06:09] local.INFO: log1:你好  
+[2017-01-25 12:13:59] local.INFO: request arrived.  
+[2017-01-25 12:13:59] local.INFO: return response.  
+[2017-01-25 12:13:59] local.INFO: log1:你好  
+[2017-01-25 12:17:33] local.INFO: request arrived.  
+[2017-01-25 12:17:33] local.INFO: return response.  
+[2017-01-25 12:17:33] local.INFO: log1:你好  
+[2017-01-25 12:17:55] local.INFO: request arrived.  
+[2017-01-25 12:17:55] local.INFO: return response.  
+[2017-01-25 12:17:55] local.INFO: log1:谢谢  
+[2017-01-25 12:18:00] local.INFO: request arrived.  
+[2017-01-25 12:18:00] local.INFO: return response.  
+[2017-01-25 12:18:00] local.INFO: log1:今天天气怎么样  
+[2017-01-25 12:18:03] local.INFO: request arrived.  
+[2017-01-25 12:18:03] local.INFO: return response.  
+[2017-01-25 12:18:03] local.INFO: log1:北京  
+[2017-01-25 12:19:15] local.INFO: request arrived.  
+[2017-01-25 12:19:15] local.INFO: return response.  
+[2017-01-25 12:19:15] local.INFO: log1:你叫什么呀  
+[2017-01-25 12:27:48] local.INFO: request arrived.  
+[2017-01-25 12:27:48] local.ERROR: exception 'ErrorException' with message 'Undefined variable: app' in /srv/www/wx/app/Http/Controllers/WechatController.php:18
+Stack trace:
+#0 /srv/www/wx/app/Http/Controllers/WechatController.php(18): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/srv/www/wx/app...', 18, Array)
+#1 [internal function]: App\Http\Controllers\WechatController->serve()
+#2 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(55): call_user_func_array(Array, Array)
+#3 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(44): Illuminate\Routing\Controller->callAction('serve', Array)
+#4 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(190): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\WechatController), 'serve')
+#5 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Route.php(144): Illuminate\Routing\Route->runController()
+#6 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(653): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#7 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#8 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php(41): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#9 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#10 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#11 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(65): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#12 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#13 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#14 /srv/www/wx/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#16 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#18 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#19 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#20 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#21 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#23 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#26 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#27 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(655): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#28 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(629): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#29 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Router.php(607): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#30 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(268): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#31 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(53): Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#32 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(46): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#33 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(137): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(33): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(104): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#36 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(150): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#37 /srv/www/wx/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(117): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#38 /srv/www/wx/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#39 {main}  
+[2017-01-25 12:28:06] local.INFO: request arrived.  
+[2017-01-25 12:28:06] local.INFO: return response.  
+[2017-01-25 12:28:06] local.INFO: message你好res:你好呀~找我干嘛？  
+[2017-01-25 12:28:18] local.INFO: request arrived.  
+[2017-01-25 12:28:18] local.INFO: return response.  
+[2017-01-25 12:28:18] local.INFO: messagehires:hi~忙啥呢  
+[2017-01-25 12:28:51] local.INFO: request arrived.  
+[2017-01-25 12:28:51] local.INFO: openid:HTTP/1.0 302 Found
+Cache-Control: no-cache
+Date:          Wed, 25 Jan 2017 12:28:51 GMT
+Location:      https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7e2b9cff9c7f27f7&redirect_uri=http%3A%2F%2Fwx.jassy.wang%2F&response_type=code&scope=snsapi_base&state=4ab0bc3dcf6f95a7c70f2266a9e53e7f#wechat_redirect
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content="1;url=https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7e2b9cff9c7f27f7&amp;redirect_uri=http%3A%2F%2Fwx.jassy.wang%2F&amp;response_type=code&amp;scope=snsapi_base&amp;state=4ab0bc3dcf6f95a7c70f2266a9e53e7f#wechat_redirect" />
+
+        <title>Redirecting to https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7e2b9cff9c7f27f7&amp;redirect_uri=http%3A%2F%2Fwx.jassy.wang%2F&amp;response_type=code&amp;scope=snsapi_base&amp;state=4ab0bc3dcf6f95a7c70f2266a9e53e7f#wechat_redirect</title>
+    </head>
+    <body>
+        Redirecting to <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7e2b9cff9c7f27f7&amp;redirect_uri=http%3A%2F%2Fwx.jassy.wang%2F&amp;response_type=code&amp;scope=snsapi_base&amp;state=4ab0bc3dcf6f95a7c70f2266a9e53e7f#wechat_redirect">https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7e2b9cff9c7f27f7&amp;redirect_uri=http%3A%2F%2Fwx.jassy.wang%2F&amp;response_type=code&amp;scope=snsapi_base&amp;state=4ab0bc3dcf6f95a7c70f2266a9e53e7f#wechat_redirect</a>.
+    </body>
+</html>  
+[2017-01-25 12:28:51] local.INFO: return response.  
+[2017-01-25 12:28:52] local.INFO: message你好res:好好好，别来无恙？  
+[2017-01-25 12:30:06] local.INFO: request arrived.  
+[2017-01-25 12:30:06] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0  
+[2017-01-25 12:30:06] local.INFO: return response.  
+[2017-01-25 12:30:06] local.INFO: message:你好res:你好呀~找我干嘛？  
+[2017-01-25 12:34:01] local.INFO: request arrived.  
+[2017-01-25 12:34:01] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0  
+[2017-01-25 12:34:01] local.INFO: return response.  
+[2017-01-25 12:34:01] local.INFO: message:你好res:你好呀，希望你今天过的快乐耶～  
+[2017-01-25 12:34:41] local.INFO: request arrived.  
+[2017-01-25 12:34:41] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0  
+[2017-01-25 12:34:41] local.INFO: return response.  
+[2017-01-25 12:34:41] local.INFO: openid:$useridmessage:你好res:嘿嘿，你好我好，大家都好~  
+[2017-01-25 12:34:59] local.INFO: request arrived.  
+[2017-01-25 12:34:59] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0  
+[2017-01-25 12:34:59] local.INFO: return response.  
+[2017-01-25 12:34:59] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0message:你好res:你好呀，~有什么新鲜事儿要对我讲？  
+[2017-01-25 12:35:39] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:你好|res:你好呀，~有什么新鲜事儿要对我讲？  
+[2017-01-25 12:43:15] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:啥|res:哎  
+[2017-01-25 12:43:19] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:…|res:智商拙计啊  
+[2017-01-25 12:43:28] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你四不四傻|res:何止傻。  
+[2017-01-25 12:43:32] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:哈哈|res:哈哈  
+[2017-01-25 12:43:40] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你是谁|res:我是棒棒哒大雁子  
+[2017-01-25 12:43:54] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你回家了吗|res:没有明天回去呀  
+[2017-01-25 12:44:09] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:我去这都能答上|res:想我啦  
+[2017-01-25 12:44:17] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你挺厉害啊|res:那必须呀  
+[2017-01-25 12:44:26] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你是人还是程序|res:谁要改成自动回复程序呀  
+[2017-01-25 12:44:43] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:😂|res:这是问号  
+[2017-01-25 12:44:52] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:——|res:唉，少壮不努力，老大耍流氓。我就不回答，从来不逞强喔  
+[2017-01-25 12:45:01] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:什么鬼|res:是我新做的表情包呀  
+[2017-01-25 12:45:07] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:？？？|res:怎么啦，我可以答疑解惑呢  
+[2017-01-25 12:45:13] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你会啥|res:我什么都会啊  
+[2017-01-25 12:45:15] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:鱼香肉丝怎么做|res:亲，已帮您找到菜谱信息  
+[2017-01-25 12:45:18] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:我不信|res:我信就行了啦  
+[2017-01-25 12:45:26] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:这么自恋|res:我理解的是自信你要说我自恋我也没办法呀  
+[2017-01-25 12:45:52] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:王丰是个大笨蛋|res:好多人在刚开始的时候都被叫做笨蛋哦！  
+[2017-01-25 12:46:02] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你也是吗|res:但是这次输得一败涂地呢  
+[2017-01-25 12:46:17] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你叫什么名字|res:我是大雁子呀，难道你不认识我了么？  
+[2017-01-25 12:46:24] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:不认识啊|res:那你认识我嘛  
+[2017-01-25 12:46:37] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:大雁子是个笨蛋|res:好多人在刚开始的时候都被叫做笨蛋哦！  
+[2017-01-25 12:46:45] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你还会说别的么|res:不是说你吧  
+[2017-01-25 12:46:53] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:我漂亮吗|res:漂亮呀  
+[2017-01-25 12:46:58] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:真的吗|res:是的！  
+[2017-01-25 12:47:03] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你骗我|res:哎呀小乖乖,不生气了,我没骗你啦  
+[2017-01-25 12:47:11] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:噗|res:哇  
+[2017-01-25 12:47:17] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:😂😂😂|res:馃,guǒ 形声。字从食从果,果亦声。果”本指瓜果,转义也指动物乳房或鸟蛋。食”与果”联合起来表示瓜果形状的点心”  
+[2017-01-25 12:47:24] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你说啥|res:我说你先说呢  
+[2017-01-25 12:51:22] local.INFO: openid:odux7v_kqwnflTmolOU3xwMDyenk|message:你会做作业吗|res:大雁子可以帮你查天气、讲笑话，陪你聊天，怎么样，够炫酷吧？  
+[2017-01-25 12:51:44] local.INFO: openid:odux7v1kB4VZ0LSIHIqvVRNfEnaM|message:然后就没有然后了|res:然后你就走吧  
+[2017-01-25 12:51:51] local.INFO: openid:odux7v1kB4VZ0LSIHIqvVRNfEnaM|message:【收到不支持的消息类型，暂无法显示】|res:我电脑下载都是什么浏览器。下不了啊！郁闷呀  
+[2017-01-25 12:53:46] local.INFO: openid:odux7v1kB4VZ0LSIHIqvVRNfEnaM|message:不知道啊|res:这么好奇吧  
+[2017-01-25 12:53:57] local.INFO: openid:odux7v1kB4VZ0LSIHIqvVRNfEnaM|message:不好奇啊|res:好奇看了一下为嘛我没感觉哇  
+[2017-01-25 14:13:20] local.INFO: openid:odux7v0LQ5tR6t4qW8JOuu5bY-1E|message:二货|res:这是给大家带来快乐的开心果嘛  
+[2017-01-26 02:47:08] local.INFO: openid:odux7v4hANHH66dSQD901ewFWPD8|message:来个女朋友|res:目前还不会呀，和我聊点别的吧!  
+[2017-01-26 02:47:28] local.INFO: openid:odux7v4hANHH66dSQD901ewFWPD8|message:那没事了|res:是没事呀  
+[2017-01-26 03:30:23] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:你傻|res:我认为傻子是这个世界最快乐的人吧  
+[2017-01-26 03:30:31] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:么么哒|res:么么  
+[2017-01-26 03:33:57] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:么么哒|res:么么  
+[2017-01-26 03:34:27] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:么么哒|res:么么  
+[2017-01-26 03:34:31] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:么么哒|res:么么  
+[2017-01-26 03:34:45] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:么么哒|res:么么  
+[2017-01-26 03:35:12] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:么么哒|res:么么  
+[2017-01-26 03:42:18] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:hi|res:我不会说英语的啦，你还是说中文吧。  
+[2017-01-26 03:42:24] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:给我讲故事|res:　　老爷爷有一个小孙子，老爷爷非常喜欢他。一天，老爷爷看到自己的鞋子破了，两个大脚趾也露了出来。老爷爷只好去鞋店买鞋。到了鞋店，老爷爷只想着孙子，忘了自己，就给孙子买了双娃娃鞋回家了。小孙子穿上新鞋子可高兴啦，老爷爷也笑得眯起了眼睛。小孙子突然看到爷爷的两个脚趾露了出来：“爷爷您的鞋子破啦，我的新鞋子给您穿。”小孙子连忙脱下鞋子给爷爷穿上。啊，哈，爷爷穿着小孙子的鞋刚好包住了两个大脚趾！  
+[2017-01-26 03:47:57] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:喜欢你|res:你喜欢我什么  
+[2017-01-26 03:48:02] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:可爱|res:我可爱么  
+[2017-01-26 03:48:06] local.INFO: openid:odux7v4K0ZtS2JZUal-IaUbEwGbY|message:可爱|res:你也很可爱呀  
+[2017-01-26 04:15:02] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:么么哒|res:么么哒~~~  
+[2017-01-26 05:14:41] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:nihao |res:我不会说英语的啦，你还是说中文吧。  
+[2017-01-26 05:14:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Model\dialogue_log' not found' in /srv/www/wx/app/Http/Controllers/WechatController.php:37
+Stack trace:
+#0 {main}  
+[2017-01-26 05:14:44] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:你好|res:你好呀，希望你今天过的快乐呢  
+[2017-01-26 05:14:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Model\dialogue_log' not found' in /srv/www/wx/app/Http/Controllers/WechatController.php:37
+Stack trace:
+#0 {main}  
+[2017-01-26 05:16:33] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:你好|res:嘿嘿，你好我好，大家都好~  
+[2017-01-26 05:16:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '{', expecting ')'' in /srv/www/wx/app/Model/dialogue_log.php:20
+Stack trace:
+#0 {main}  
+[2017-01-26 05:17:14] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:你好|res:你好呀，希望你今天过的快乐啦  
+[2017-01-26 05:17:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ''::'' (T_CONSTANT_ENCAPSED_STRING)' in /srv/www/wx/app/Model/dialogue_log.php:29
+Stack trace:
+#0 {main}  
+[2017-01-26 05:20:42] local.INFO: openid:odux7v-mtFPMXxDh0WJaxtczSlQ0|message:你好|res:你好呀，希望你今天过的快乐吧  
+[2017-01-26 05:20:42] local.INFO: App\Model\dialogue_log::insertLog()29: Undefined variable: daatalog  

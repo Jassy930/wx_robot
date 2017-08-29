@@ -20,3 +20,6 @@ Route::any('/log', function (){
 	$filepath = storage_path('logs/laravel.log');
 	return response()-> download($filepath);
 });
+Route::any('/phpinfo', function (){
+	return phpinfo();
+});

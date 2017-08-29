@@ -1,0 +1,15 @@
+[Wed Jan 25 18:26:00.358766 2017] [:error] [pid 2366] [client 140.207.54.73:52459] PHP Parse error:  syntax error, unexpected '}', expecting ')' in /srv/www/wx/app/Http/Controllers/WechatController.php on line 47
+[Wed Jan 25 18:33:53.103990 2017] [:error] [pid 1054] [client 140.207.54.74:49324] PHP Fatal error:  Call to undefined function App\\Http\\Controllers\\send_post() in /srv/www/wx/app/Http/Controllers/WechatController.php on line 23
+[Wed Jan 25 19:27:53.672467 2017] [:error] [pid 1392] [client 140.207.54.73:40811] PHP Parse error:  syntax error, unexpected ']' in /srv/www/wx/app/Http/Controllers/WechatController.php on line 50
+[Wed Jan 25 19:29:39.950952 2017] [:error] [pid 1051] [client 140.207.54.74:39394] PHP Parse error:  syntax error, unexpected ']' in /srv/www/wx/app/Http/Controllers/WechatController.php on line 50
+[Wed Jan 25 19:30:29.824213 2017] [:error] [pid 1050] [client 140.207.54.73:50165] PHP Parse error:  syntax error, unexpected ']' in /srv/www/wx/app/Http/Controllers/WechatController.php on line 50
+[Wed Jan 25 19:40:13.112015 2017] [:error] [pid 1349] [client 140.207.54.73:44273] PHP Fatal error:  Call to undefined function App\\Http\\Controllers\\jsono_decode() in /srv/www/wx/app/Http/Controllers/WechatController.php on line 50
+[Thu Jan 26 13:14:41.537682 2017] [:error] [pid 1052] [client 140.207.54.73:53522] PHP Fatal error:  Class 'App\\Model\\dialogue_log' not found in /srv/www/wx/app/Http/Controllers/WechatController.php on line 37
+[Thu Jan 26 13:14:44.644975 2017] [:error] [pid 1051] [client 140.207.54.73:58374] PHP Fatal error:  Class 'App\\Model\\dialogue_log' not found in /srv/www/wx/app/Http/Controllers/WechatController.php on line 37
+[Thu Jan 26 13:16:33.921239 2017] [:error] [pid 1392] [client 140.207.54.73:52850] PHP Parse error:  syntax error, unexpected '{', expecting ')' in /srv/www/wx/app/Model/dialogue_log.php on line 20
+[Thu Jan 26 13:17:14.498583 2017] [:error] [pid 2365] [client 140.207.54.73:55534] PHP Parse error:  syntax error, unexpected ''::'' (T_CONSTANT_ENCAPSED_STRING) in /srv/www/wx/app/Model/dialogue_log.php on line 29
+[Thu Jan 26 21:50:43.153283 2017] [:error] [pid 1050] [client 140.207.54.73:55844] PHP Fatal error:  Call to undefined function App\\Http\\Controllers\\dialogue_log() in /srv/www/wx/app/Http/Controllers/WechatController.php on line 25
+[Thu Jan 26 22:27:42.204417 2017] [:error] [pid 2366] [client 140.207.54.73:48708] PHP Parse error:  syntax error, unexpected '%' in /srv/www/wx/app/Model/filter_word.php on line 26
+[Thu Jan 26 22:32:26.612463 2017] [:error] [pid 2365] [client 58.247.206.147:49903] PHP Parse error:  syntax error, unexpected '%' in /srv/www/wx/app/Model/filter_word.php on line 28
+[Thu Jan 26 22:57:13.132750 2017] [:error] [pid 1054] [client 140.207.54.74:33652] PHP Parse error:  syntax error, unexpected ':' in /srv/www/wx/app/Model/filter_word.php on line 28
+[Thu Jan 26 23:13:49.945582 2017] [:error] [pid 2365] [client 140.207.54.73:47593] PHP Fatal error:  Class 'App\\Model\\PDO' not found in /srv/www/wx/app/Model/filter_word.php on line 30

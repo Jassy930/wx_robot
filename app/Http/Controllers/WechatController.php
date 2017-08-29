@@ -33,9 +33,9 @@ class WechatController extends Controller
 					else if (strpos($message->Content, '查询id') !== false){
 						$text = $_GET['openid'];
 					}
-					#else if (strpos($message->Content, '萌萌') !== false){
-					#	$text = '萌萌是世界上最漂亮可爱的小姐姐~~';
-					#}
+					else if (strpos($message->Content, '海爷是谁') !== false){
+						$text = '海爷是世界上最漂亮可爱的小姐姐~~';
+					}
 					else {
 						$text = self::send_post($message->Content, $_GET['openid']);
 					}
