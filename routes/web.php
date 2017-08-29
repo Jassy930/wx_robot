@@ -16,3 +16,7 @@ Route::get('/welcome', function () {
 });
 Route::any('/', 'WechatController@serve');
 Route::any('/wechat', 'WechatController@serve');
+Route::any('/log', function (){
+	$filepath = storage_path('logs/laravel.log');
+	return response()-> download($filepath);
+});

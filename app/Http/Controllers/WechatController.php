@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Log;
+use App\Model\dialogue_log;
+use App\Model\filter_word;
 
 class WechatController extends Controller
 {
@@ -20,12 +22,33 @@ class WechatController extends Controller
         $wechat->server->setMessageHandler(function($message){
 			switch ($message -> MsgType){
 				case 'text':
-					if (strpos($message->Content, '么么哒') !== false){
-						$text = '么么哒~~~';
-						Log::info('openid:' . $_GET['openid'] . '|message:' . $message->Content . '|res:' . $text);
-						return $text;
+					$text = filter_word::getFilterRes($message->Content);
+					#$text = '';
+					Log::info('testFilterRes_restext:' . $text);
+					if ($text){
 					}
-					return self::send_post($message->Content, $_GET['openid']);
+					else if (strpos($message->Content, '么么哒') !== false){
+						$text = '么么哒~~~';
+					}
+					else if (strpos($message->Content, '查询id') !== false){
+						$text = $_GET['openid'];
+					}
+					#else if (strpos($message->Content, '萌萌') !== false){
+					#	$text = '萌萌是世界上最漂亮可爱的小姐姐~~';
+					#}
+					else {
+						$text = self::send_post($message->Content, $_GET['openid']);
+					}
+					$dialogue_log = array(
+						'open_id' => $_GET['openid'],
+						'in_type' => 'text',
+						'in_word' => $message->Content,
+						'out_type' => 'text',
+						'out_word' => $text,
+					);
+					dialogue_log::insertlog($dialogue_log);
+					Log::info('openid:' . $_GET['openid'] . '|message:' . $message->Content . '|res:' . $text);
+					return $text;
 					break;
 				default:
 					return "然后呢？";
@@ -54,7 +77,7 @@ class WechatController extends Controller
 		$result = file_get_contents($url, false, $content);
 	//	Log::info(json_decode($result)->text);
 		$result = json_decode($result)->text;
-		Log::info('openid:' . $userid . '|message:' . $text . '|res:' . $result);
+//		Log::info('openid:' . $userid . '|message:' . $text . '|res:' . $result);
 		return $result;
 	}
 }
